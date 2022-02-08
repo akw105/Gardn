@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6e5b270eb926a4c5225dbfa41f0622b",
+    "content-hash": "92ce38c39b266d145affda85533e6728",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -593,6 +593,55 @@
                 }
             ],
             "time": "2020-12-29T14:50:06+00:00"
+        },
+        {
+            "name": "fennb/phirehose",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fennb/phirehose.git",
+                "reference": "75a71b31e7b18c229f789e54c267529de360eb6e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fennb/phirehose/zipball/75a71b31e7b18c229f789e54c267529de360eb6e",
+                "reference": "75a71b31e7b18c229f789e54c267529de360eb6e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL"
+            ],
+            "authors": [
+                {
+                    "name": "Fenn Bailey",
+                    "homepage": "http://fennb.com/"
+                }
+            ],
+            "description": "A PHP interface to the Twitter Streaming API.",
+            "homepage": "https://github.com/fennb/phirehose",
+            "keywords": [
+                "api",
+                "phirehose",
+                "php",
+                "streaming",
+                "twitter"
+            ],
+            "support": {
+                "issues": "https://github.com/fennb/phirehose/issues",
+                "source": "https://github.com/fennb/phirehose/tree/master"
+            },
+            "time": "2021-06-25T00:39:17+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
@@ -3466,6 +3515,126 @@
                 }
             ],
             "time": "2021-09-25T23:10:38+00:00"
+        },
+        {
+            "name": "spatie/laravel-twitter-streaming-api",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-twitter-streaming-api.git",
+                "reference": "0804e8adab2b93a74bf7562af6e765e54147b5ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-twitter-streaming-api/zipball/0804e8adab2b93a74bf7562af6e765e54147b5ef",
+                "reference": "0804e8adab2b93a74bf7562af6e765e54147b5ef",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^6.0|^7.0|^8.0",
+                "php": "^8.0|^7.3",
+                "spatie/twitter-streaming-api": "^1.0.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.0|^5.0|^6.0",
+                "phpunit/phpunit": "^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\LaravelTwitterStreamingApi\\TwitterStreamingApiServiceProvider"
+                    ],
+                    "aliases": {
+                        "TwitterStreamingApi": "Spatie\\LaravelTwitterStreamingApi\\TwitterStreamingApiFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\LaravelTwitterStreamingApi\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easily work with the Twitter Streaming API in a Laravel app",
+            "homepage": "https://github.com/spatie/laravel-twitter-streaming-api",
+            "keywords": [
+                "laravel-twitter-streaming-api",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-twitter-streaming-api/issues",
+                "source": "https://github.com/spatie/laravel-twitter-streaming-api/tree/1.4.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-12-11T20:11:12+00:00"
+        },
+        {
+            "name": "spatie/twitter-streaming-api",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/twitter-streaming-api.git",
+                "reference": "3b67fec02842d58e7cec5506b7fe9dc9a590941e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/twitter-streaming-api/zipball/3b67fec02842d58e7cec5506b7fe9dc9a590941e",
+                "reference": "3b67fec02842d58e7cec5506b7fe9dc9a590941e",
+                "shasum": ""
+            },
+            "require": {
+                "fennb/phirehose": "dev-master#405d125db9baa771ac0cd861f0b2b2032434d40c",
+                "php": "^8.0|^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "9.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\TwitterStreamingApi\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easily work with the Twitter Streaming API",
+            "homepage": "https://github.com/spatie/twitter-streaming-api",
+            "keywords": [
+                "spatie",
+                "twitter-streaming-api"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/twitter-streaming-api/issues",
+                "source": "https://github.com/spatie/twitter-streaming-api/tree/1.4.2"
+            },
+            "time": "2020-12-11T20:34:07+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
