@@ -66,4 +66,12 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    /**
+     * Get the Twitter Handle associated with the user.
+     */
+    public function twitterHandle()
+    {
+        return $this->hasOne(TwitterHandle::class);
+    }
 }

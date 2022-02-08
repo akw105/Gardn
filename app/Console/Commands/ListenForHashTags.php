@@ -30,7 +30,7 @@ class ListenForHashTags extends Command
     public function handle()
     {
         TwitterStreamingApi::publicStream()
-            ->whenHears('#laravel', function ($tweet) {
+            ->whenHears('#gdn', function ($tweet) {
                 ProcessTweet::dispatch($tweet);
             })
             ->startListening();

@@ -9,6 +9,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\Models\Post;
+use App\Models\TwitterHandle;
 use Illuminate\Support\Str;
 
 class ProcessTweet implements ShouldQueue
@@ -30,6 +31,10 @@ class ProcessTweet implements ShouldQueue
 
     /**
      * Execute the job.
+     * 
+     * Does the user_screen_name match a saved Twitter handle?
+     * If yes, save it.
+     * If no, ignore it. 
      *
      * @return void
      */
@@ -40,15 +45,19 @@ class ProcessTweet implements ShouldQueue
         $tweet_text = isset($tweet['text']) ? $tweet['text'] : null;
         $user_screen_name = isset($tweet['user']['screen_name']) ? $tweet['user']['screen_name'] : null;
 
-        Post::create([
-            'user_id' => 1,
-            'title' => $user_screen_name . ' tweeted',
-            'slug' => Str::slug($user_screen_name . '-' . Now(), '-'),
-            'body' => '<p>' . $tweet_text . '</p>',
-            'teaser' => $user_screen_name . ' tweeted',
-            'published' => '1',
-            'public' => '1',
-            'source' => 'Twitter'
-        ]);
+        $handle = TwitterHandle::firstWhere('handle', $user_screen_name);
+
+        if ($handle) {
+            Post::create([
+                'user_id' => $handle->user_id,
+                'title' => $user_screen_name . ' tweeted',
+                'slug' => Str::slug($user_screen_name . '-' . Now(), '-'),
+                'body' => '<p>' . $tweet_text . '</p>',
+                'teaser' => $user_screen_name . ' tweeted',
+                'published' => '1',
+                'public' => '1',
+                'source' => 'Twitter'
+            ]);
+        }
     }
 }
