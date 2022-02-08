@@ -23,7 +23,7 @@ class Post extends Model
      * @var string[]
      */
     protected $fillable = [
-        'author_id',
+        'user_id',
         'blog_id',
         'title',
         'slug',
