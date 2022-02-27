@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GithubController;
+use App\Http\Controllers\YoutubeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +22,11 @@ Route::get('/github', function () {
     return view('fetchData');
 });
 Route::post('/save-repos', [GithubController::class, 'save']);
+
+Route::get('/youtube', function () {
+    return view('fetchData');
+});
+Route::post('/save-videos', [YouTubeController::class, 'save']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

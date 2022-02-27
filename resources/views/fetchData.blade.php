@@ -27,6 +27,7 @@
         <!-- Page Content -->
         <main>
             @livewire('github')
+            @livewire('youtube')
         </main>
     </div>
 
